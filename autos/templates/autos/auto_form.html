@@ -1,0 +1,12 @@
+{% extends "base_bootstrap.html" %}
+
+{% block content %}
+  <form action="" method="post" class="container mt-5">
+    {% csrf_token %}
+    <table>
+    {{ form.as_table }}
+    </table>
+    <input type="submit" value="Submit" class="btn btn-success">
+    <input type="submit" onclick="window.location='{% url 'autos:all' %}' ; return false;" value="Cancel" class="btn btn-danger">
+  </form>
+{% endblock %}
